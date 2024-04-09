@@ -1,0 +1,591 @@
+:root {
+  --color-primary: #2a2a2a;
+  --color-accent: #f93f04;
+  --color-accent-secondary: #ff6230;
+  --color-reverse: #ffffff;
+  --color-primary-grey: #f9f9f9;
+  --color-system-grey: #9b9b9b;
+  --color-secondary-grey: #dadada;
+  --color-background: var(--color-accent);
+  --color-background-secondary: var(--color-accent-secondary);
+  --color-background-reverse: var(--color-reverse);
+  --color-background-block: var(--color-primary-grey);
+  --color-background-edge: var(--color-primary);
+  --color-text: var(--color-primary);
+  --color-text-reverse: var(--color-reverse);
+  --color-text-muted: var(--color-system-grey);
+  --color-text-accent: var(--color-accent);
+  --color-border: var(--color-primary);
+  --color-border-reverse: var(--color-reverse);
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?j4f5d2");
+  src: url("../fonts/icomoon.eot?j4f5d2#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?j4f5d2") format("truetype"), url("../fonts/icomoon.woff?j4f5d2") format("woff"), url("../fonts/icomoon.svg?j4f5d2#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shopping-bag:before {
+  content: "\e906";
+}
+
+.icon-shopping-cart:before {
+  content: "\e903";
+}
+
+.icon-user:before {
+  content: "\e904";
+}
+
+.icon-search:before {
+  content: "\e905";
+}
+
+.icon-clock:before {
+  content: "\e902";
+  color: #f93f04;
+}
+
+.icon-heart:before {
+  content: "\e90d";
+}
+
+.icon-fill-heart:before {
+  content: "\e90e";
+  color: #f93f04;
+}
+
+.icon-arrow-down:before {
+  content: "\e909";
+}
+
+.icon-play:before {
+  content: "\e900";
+  color: #fff;
+}
+@supports (margin-right: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .icon-play:before {
+    margin-right: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem );
+  }
+}
+@supports not (margin-right: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .icon-play:before {
+    margin-right: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.icon-scales:before {
+  content: "\e907";
+  color: #f93f04;
+}
+
+.icon-basket:before {
+  content: "\e908";
+  color: #f93f04;
+}
+
+.icon-arrow:before {
+  content: "\e90c";
+}
+
+@font-face {
+  font-family: icomoon;
+  font-display: swap;
+  src: url("../fonts/icomoon.woff2") format("woff2"), url("../fonts/icomoon.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  src: url("../fonts/TTFirsNeue-Regular.eot");
+  src: local("TT Firs Neue Regular"), local("TTFirsNeue-Regular"), url("../fonts/TTFirsNeue-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTFirsNeue-Regular.woff2") format("woff2"), url("../fonts/TTFirsNeue-Regular.woff") format("woff"), url("../fonts/TTFirsNeue-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  src: url("../fonts/TTFirsNeue-Medium.eot");
+  src: local("TT Firs Neue Medium"), local("TTFirsNeue-Medium"), url("../fonts/TTFirsNeue-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff"), url("../fonts/TTFirsNeue-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  src: url("../fonts/TTFirsNeue-DemiBold.eot");
+  src: local("TT Firs Neue DemiBold"), local("TTFirsNeue-DemiBold"), url("../fonts/TTFirsNeue-DemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff"), url("../fonts/TTFirsNeue-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: var(--color-text-dark);
+  line-height: normal;
+  font-family: "TT Firs Neue";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "TT Firs Neue";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+[class*=__container] {
+  max-width: 75rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+@supports (margin-top: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem )) {
+  section:not(:first-child) {
+    margin-top: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem );
+  }
+}
+@supports not (margin-top: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem )) {
+  section:not(:first-child) {
+    margin-top: calc(4.375rem + 2.5 * (100vw - 20rem) / 56.875);
+  }
+}
+
+@supports (margin-bottom: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem )) {
+  section:not(:last-child) {
+    margin-bottom: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem );
+  }
+}
+@supports not (margin-bottom: clamp( 4.375rem , 3.4958791209rem  +  4.3956043956vw , 6.875rem )) {
+  section:not(:last-child) {
+    margin-bottom: calc(4.375rem + 2.5 * (100vw - 20rem) / 56.875);
+  }
+}
+
+h1,
+.title-1 {
+  font-weight: 600;
+  line-height: 87%;
+  letter-spacing: 0.002em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+@supports (font-size: clamp( 4.875rem , 2.625rem  +  11.25vw , 6rem )) {
+  h1,
+  .title-1 {
+    font-size: clamp( 4.875rem , 2.625rem  +  11.25vw , 6rem );
+  }
+}
+@supports not (font-size: clamp( 4.875rem , 2.625rem  +  11.25vw , 6rem )) {
+  h1,
+  .title-1 {
+    font-size: calc(4.875rem + 1.125 * (100vw - 20rem) / 10);
+  }
+}
+@media (min-width: 480px) {
+  @supports (font-size: clamp( 4.4125rem , -0.5195rem  +  16.44vw , 12.11875rem )) {
+    h1,
+    .title-1 {
+      font-size: clamp( 4.4125rem , -0.5195rem  +  16.44vw , 12.11875rem );
+    }
+  }
+  @supports not (font-size: clamp( 4.4125rem , -0.5195rem  +  16.44vw , 12.11875rem )) {
+    h1,
+    .title-1 {
+      font-size: calc(4.4125rem + 7.70625 * (100vw - 30rem) / 46.875);
+    }
+  }
+}
+
+h2,
+.title-2 {
+  font-weight: 500;
+  line-height: 87%;
+  letter-spacing: 0.002em;
+  color: var(--color-text);
+}
+@supports (font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem )) {
+  h2,
+  .title-2 {
+    font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem );
+  }
+}
+@supports not (font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem )) {
+  h2,
+  .title-2 {
+    font-size: calc(2rem + 2 * (100vw - 20rem) / 56.875);
+  }
+}
+
+h3,
+.title-3 {
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-text-reverse);
+}
+@supports (font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem )) {
+  h3,
+  .title-3 {
+    font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem );
+  }
+}
+@supports not (font-size: clamp( 2rem , 1.2967032967rem  +  3.5164835165vw , 4rem )) {
+  h3,
+  .title-3 {
+    font-size: calc(2rem + 2 * (100vw - 20rem) / 56.875);
+  }
+}
+
+h4,
+.title-4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+h5,
+.title-5 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: initial;
+  color: var(--color-text-muted);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+@supports (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .text-muted {
+    font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .text-muted {
+    font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.text-light {
+  color: var(--color-text-reverse);
+}
+@supports (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .text-light {
+    font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .text-light {
+    font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 56.875);
+  }
+}
+
+.button-wrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+@supports (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .button {
+    font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.75rem , 0.6620879121rem  +  0.4395604396vw , 1rem )) {
+  .button {
+    font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 56.875);
+  }
+}
+.button_lg {
+  line-height: 87%;
+  letter-spacing: 0.2%;
+}
+@supports (padding-top: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
+  .button_lg {
+    padding-top: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem );
+  }
+}
+@supports not (padding-top: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
+  .button_lg {
+    padding-top: calc(0.875rem + 0.125 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
+  .button_lg {
+    padding-bottom: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem );
+  }
+}
+@supports not (padding-bottom: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
+  .button_lg {
+    padding-bottom: calc(0.875rem + 0.125 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-right: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem )) {
+  .button_lg {
+    padding-right: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem );
+  }
+}
+@supports not (padding-right: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem )) {
+  .button_lg {
+    padding-right: calc(1.25rem + 0.75 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-left: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem )) {
+  .button_lg {
+    padding-left: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem );
+  }
+}
+@supports not (padding-left: clamp( 1.25rem , 0.9862637363rem  +  1.3186813187vw , 2rem )) {
+  .button_lg {
+    padding-left: calc(1.25rem + 0.75 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-top: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_md {
+    padding-top: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem );
+  }
+}
+@supports not (padding-top: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_md {
+    padding-top: calc(0.5rem + 0.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_md {
+    padding-bottom: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem );
+  }
+}
+@supports not (padding-bottom: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_md {
+    padding-bottom: calc(0.5rem + 0.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-right: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem )) {
+  .button_md {
+    padding-right: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem );
+  }
+}
+@supports not (padding-right: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem )) {
+  .button_md {
+    padding-right: calc(1.125rem + 1.125 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-left: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem )) {
+  .button_md {
+    padding-left: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem );
+  }
+}
+@supports not (padding-left: clamp( 1.125rem , 0.7293956044rem  +  1.978021978vw , 2.25rem )) {
+  .button_md {
+    padding-left: calc(1.125rem + 1.125 * (100vw - 20rem) / 56.875);
+  }
+}
+.button_default {
+  color: var(--color-text-reverse);
+  background-color: var(--color-background);
+}
+@supports (font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_default .icon-arrow {
+    font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_default .icon-arrow {
+    font-size: calc(0.5rem + 0.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .button_default .icon-arrow {
+    margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem );
+  }
+}
+@supports not (margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .button_default .icon-arrow {
+    margin-left: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 56.875);
+  }
+}
+.button_default:active {
+  color: var(--color-text-accent);
+  background-color: var(--color-background-reverse);
+}
+@media (hover: hover) {
+  .button_default:hover {
+    color: var(--color-text-reverse);
+    background-color: var(--color-background-secondary);
+  }
+}
+.button_reverse {
+  color: var(--color-text-accent);
+  background-color: var(--color-background-reverse);
+}
+.button_reverse:active {
+  color: var(--color-text-reverse);
+  background-color: var(--color-background);
+}
+.button_transparent {
+  border: 2px solid var(--color-border-reverse);
+  color: var(--color-text-reverse);
+  background-color: transparent;
+}
+@supports (font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_transparent .icon-arrow {
+    font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.5rem , 0.3241758242rem  +  0.8791208791vw , 1rem )) {
+  .button_transparent .icon-arrow {
+    font-size: calc(0.5rem + 0.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .button_transparent .icon-arrow {
+    margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem );
+  }
+}
+@supports not (margin-left: clamp( 0.3125rem , 0.2026098901rem  +  0.5494505495vw , 0.625rem )) {
+  .button_transparent .icon-arrow {
+    margin-left: calc(0.3125rem + 0.3125 * (100vw - 20rem) / 56.875);
+  }
+}
+.button_ghost {
+  outline: 2px solid var(--color-primary);
+  background-color: transparent;
+}
+.button_ghost .icon-arrow {
+  font-size: 12px;
+  margin-right: 8px;
+}
+.button_light {
+  color: var(--color-text-accent);
+  background-color: var(--color-background-reverse);
+}
+
+.title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 42px;
+}
+
+.ibg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ibg > img:first-child {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
