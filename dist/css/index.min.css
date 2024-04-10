@@ -281,11 +281,23 @@
 /* =====================================
 ================================================================================*/
 .goods__cards-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+  --columns: 4;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  row-gap: 20px;
   width: 100%;
   overflow: hidden;
+}
+@media screen and (max-width: 320px) {
+  .goods .goods__cards-wrapper {
+    --columns: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .goods .goods__cards-wrapper {
+    --columns: 2;
+  }
 }
 
 .card {
@@ -293,7 +305,6 @@
   position: relative;
   flex-direction: column;
   gap: 16px;
-  width: 25%;
   box-sizing: border-box;
 }
 .card__image {
