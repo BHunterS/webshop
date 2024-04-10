@@ -589,3 +589,14 @@ h5,
   opacity: 0;
   visibility: hidden;
 }
+
+hr {
+  border: 1px solid rgb(239, 239, 239);
+}
+
+.wrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

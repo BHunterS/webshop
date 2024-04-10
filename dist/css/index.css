@@ -703,3 +703,44 @@
 
 /* =====================================
 ================================================================================*/
+@supports (padding-inline: clamp( 0.9375rem , -12.7987637363rem  +  68.6813186813vw , 40rem )) {
+  .authorization__container {
+    padding-inline: clamp( 0.9375rem , -12.7987637363rem  +  68.6813186813vw , 40rem );
+  }
+}
+@supports not (padding-inline: clamp( 0.9375rem , -12.7987637363rem  +  68.6813186813vw , 40rem )) {
+  .authorization__container {
+    padding-inline: calc(0.9375rem + 39.0625 * (100vw - 20rem) / 56.875);
+  }
+}
+.authorization__maincontent {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.authorization__header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.authorization__logo {
+  height: 36px;
+  width: 183px;
+}
+.authorization__input {
+  border-radius: 10px;
+  background: rgb(249, 249, 249);
+  height: 53px;
+  padding: 10px 20px 10px 20px;
+}
+.authorization__checkbox-line {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.authorization__footer {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
